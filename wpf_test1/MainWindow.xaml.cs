@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,7 +45,16 @@ namespace wpf_test1
 
         private void load_list()
         {
-            string cn_string = Properties.Settings.Default.
+            string cn_string = Properties.Settings.Default.ConnectionString;
+
+            SqlConnection cn_connection = new SqlConnection(cn_string);
+
+            if (cn_connection.State != ConnectionState.Open) 
+            {
+                cn_connection.Open();
+            }
+
+
         }
     }
 }
