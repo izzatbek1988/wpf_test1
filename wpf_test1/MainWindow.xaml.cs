@@ -35,5 +35,15 @@ namespace wpf_test1
           e.Handled = true; // rbMenu_ContextMenuOpening bu metod quisc tablor bar da o`ng knoplani bosishni passivlashtiradi
 
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            load_list();
+        }
+
+        private void load_list()
+        {
+            string cn_string = Properties.Settings.Default.
+        }
     }
 }

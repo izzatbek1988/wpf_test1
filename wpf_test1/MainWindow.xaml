@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_test1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStyle="None">
+        Title="MainWindow" Height="450" Width="800" WindowStyle="None" Loaded="Window_Loaded">
     <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="137"/>
+
+
+            <RowDefinition/>          
+
+        </Grid.RowDefinitions>
+
         <Ribbon x:Name="rbMenu" SelectedIndex="0" ContextMenuOpening="rbMenu_ContextMenuOpening">
 
 
@@ -48,6 +57,13 @@
             </RibbonTab>
 
 
+
+
         </Ribbon>
+
+        <DataGrid Grid.Row="1" x:Name="dtUsers">
+            
+        </DataGrid>
+
     </Grid>
 </Window>
