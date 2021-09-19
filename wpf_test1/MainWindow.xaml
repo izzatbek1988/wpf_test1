@@ -61,7 +61,7 @@
 
         </Ribbon>
 
-        <DataGrid Grid.Row="1" x:Name="dtUsers">
+        <DataGrid Grid.Row="1" x:Name="dtUsers" Background="#FFAD9393">
             
         </DataGrid>
 
