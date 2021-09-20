@@ -21,7 +21,11 @@ namespace wpf_test1
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
+
+
     {
+        SqlCommand  cmd;
+        SqlDataAdapter da;
         public MainWindow()
         {
             InitializeComponent();
@@ -38,6 +42,7 @@ namespace wpf_test1
 
         }
 
+        
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             load_list();
@@ -53,7 +58,11 @@ namespace wpf_test1
             {
                 cn_connection.Open();
             }
-
+            da = new SqlDataAdapter("select *from tbl_Users", cn_connection);
+            DataTable tablo = new DataTable();
+            da.Fill(tablo);
+            dtUsers.DataContext = tablo;
+            cn_connection.Close();
 
         }
     }
