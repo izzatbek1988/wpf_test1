@@ -61,7 +61,7 @@ namespace wpf_test1
             da = new SqlDataAdapter("select *from tbl_Users", cn_connection);
             DataTable tablo = new DataTable();
             da.Fill(tablo);
-            dtUsers.DataContext = tablo;
+            dtUsers.ItemsSource= tablo.DefaultView;
             cn_connection.Close();
 
         }
