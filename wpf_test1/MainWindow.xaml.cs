@@ -49,6 +49,22 @@ namespace wpf_test1
             load_list();
         }
 
+        public void kullanici_ekle()
+        {
+            SqlConnection cn_connection = new SqlConnection();
+            cn_connection.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
+
+            if (cn_connection.State != ConnectionState.Open)
+            {
+                cn_connection.Open();
+            }
+
+        }
+
+        
+        
+
+
         private void load_list()
         {
             //string cn_string = Properties.Settings.Default.ConnectionString;
